@@ -69,10 +69,6 @@ SERVICE_URL = ${CCNET_URL:-${ccnet_url}}
 PORT = 13419
 EOF
 
-seaf-server-init \
-    --central-config-dir ${SEAFILE_CENTRAL_CONF_DIR} \
-    --seafile-dir /seafile-data/
-
 echo /seafile-data/ > ${CCNET_CONF_DIR}/seafile.ini
 
 true | ${ROOT}/upgrade/minor-upgrade.sh
