@@ -106,4 +106,19 @@ THUMBNAIL_EXTENSION = "png"
 THUMBNAIL_DEFAULT_SIZE = "24"
 PREVIEW_DEFAULT_SIZE = "100"
 
+ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'USER' : '${DB_ENV_MYSQL_USER}',
+         'PASSWORD' : '${DB_ENV_MYSQL_PASSWORD}',
+         'NAME' : 'seahub-db',
+         'HOST' : 'db',
+         # This is only needed for MySQL older than 5.5.5.
+         # For MySQL newer than 5.5.5 INNODB is the default already.
+         'OPTIONS': {
+             "init_command": "SET storage_engine=INNODB",
+         }
+     }
+ }
+
 EOFFF
